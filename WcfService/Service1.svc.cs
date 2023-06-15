@@ -380,7 +380,7 @@ namespace WcfService
                                 BookId = reader.GetInt32(0),
                                 Title = reader.GetString(1),
                                 Author = reader.GetString(2),
-                                Price = reader.GetDecimal(3)
+                                Price = int.Parse(reader.GetString(3))
                             };
 
                             return book;
@@ -418,7 +418,7 @@ namespace WcfService
                 }
             }
         }
-        //通过UserID查找用户信息
+        //通过serID查找用户信息
         public User GetUserByID(string userID)
         {
             // 使用连接字符串进行数据库连接，并执行相应的查询操作
@@ -435,7 +435,7 @@ namespace WcfService
                 if (reader.Read())
                 {
                     User user = new User();
-                    user.UserID = reader.GetString(0);
+                    user.UserID = reader.GetInt32(0).ToString();
                     user.Username = reader.GetString(1);
                     user.Password = reader.GetString(2);
                     user.Email = reader.GetString(3);

@@ -26,17 +26,12 @@ namespace WcfWeb
             foreach(var b in CartBooks)
             {
                 var bookID = b.BookId;
+                ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+                var book = client.GetBookByID(bookID);
+                b.Author = book.Author;
+                b.Title = book.Title;
+                b.Price = book.Price;
 
-                
-            }
-            foreach (var book in CartBooks)
-            {
-                // 在这里可以使用查询到的书籍信息进行后续操作
-                
-                Console.WriteLine("Title: " + book.Title);
-                Console.WriteLine("Author: " + book.Author);
-                Console.WriteLine("Price: " + book.Price);
-                
             }
 
             if (!IsPostBack)
