@@ -12,8 +12,6 @@ namespace WcfService
     [ServiceContract]
     public interface IService1
     {
-
-
         [OperationContract]
         bool Register(string username, string password);
 
@@ -46,6 +44,12 @@ namespace WcfService
         [OperationContract]
         
         Book GetBookByID(int bookID);
+
+        [OperationContract]
+        bool UpdateUser(User user);
+
+        [OperationContract]
+        User GetUserByID(string userID);
 
 
 

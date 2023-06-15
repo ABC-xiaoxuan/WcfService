@@ -79,6 +79,18 @@
   <wsdl:message name="IService1_GetBookByID_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetBookByIDResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUserByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByIDResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Register" message="tns:IService1_Register_InputMessage" />
@@ -127,6 +139,14 @@
     <wsdl:operation name="GetBookByID">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetBookByID" message="tns:IService1_GetBookByID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetBookByIDResponse" message="tns:IService1_GetBookByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateUser" message="tns:IService1_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateUserResponse" message="tns:IService1_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserByID" message="tns:IService1_GetUserByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUserByIDResponse" message="tns:IService1_GetUserByID_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -232,6 +252,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetBookByID">
       <soap:operation soapAction="http://tempuri.org/IService1/GetBookByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByID">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUserByID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

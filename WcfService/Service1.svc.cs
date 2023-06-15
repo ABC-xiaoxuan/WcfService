@@ -391,12 +391,83 @@ namespace WcfService
 
             return null; // Book not found
         }
+        // 修改用户信息的WCF服务方法
+        public bool UpdateUser(User user)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("UPDATE [User] SET Username = @Username, Password = @Password, Email = @Email, Phone = @Phone, Detail = @Detail WHERE UserID = @UserID", connection);
+                    command.Parameters.AddWithValue("@UserID", user.UserID);
+                    command.Parameters.AddWithValue("@Username", user.Username);
+                    command.Parameters.AddWithValue("@Password", user.Password);
+                    command.Parameters.AddWithValue("@Email", user.Email);
+                    command.Parameters.AddWithValue("@Phone", user.Phone);
+                    command.Parameters.AddWithValue("@Detail", user.Detail);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    // 处理异常
+                    return false;
+                }
+            }
+        }
+        //通过UserID查找用户信息
+        public User GetUserByID(string userID)
+        {
+            // 使用连接字符串进行数据库连接，并执行相应的查询操作
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM dbo.Users WHERE UserID = @UserID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@UserID", userID);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    User user = new User();
+                    user.UserID = reader.GetString(0);
+                    user.Username = reader.GetString(1);
+                    user.Password = reader.GetString(2);
+                    user.Email = reader.GetString(3);
+                    user.Phone = reader.GetString(4);
+                    user.Detail = reader.GetString(5);
+
+                    return user;
+                }
+
+                return null; // 用户不存在或查询失败时返回null
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
-
-
-
-
-
 }
     
 

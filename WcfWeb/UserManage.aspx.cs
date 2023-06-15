@@ -40,6 +40,17 @@ namespace WcfWeb
                     Response.Write("<script>alert('操作失败');</script>");
                 }
             }
+            if(e.CommandName == "EditUser") 
+              {
+                
+                string userID = e.CommandArgument.ToString();
+
+                
+                Response.Redirect($"EditUser.aspx?UserID={userID}");
+            }
+
+            
+            
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -70,6 +81,7 @@ namespace WcfWeb
             gvUsers.DataSource = users;
             gvUsers.DataBind();
         }
+        
 
 
     }

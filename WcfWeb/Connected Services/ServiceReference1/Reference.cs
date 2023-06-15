@@ -86,6 +86,18 @@ namespace WcfWeb.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBookByID", ReplyAction="http://tempuri.org/IService1/GetBookByIDResponse")]
         System.Threading.Tasks.Task<WcfService.Book> GetBookByIDAsync(int bookID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUser", ReplyAction="http://tempuri.org/IService1/UpdateUserResponse")]
+        bool UpdateUser(WcfService.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUser", ReplyAction="http://tempuri.org/IService1/UpdateUserResponse")]
+        System.Threading.Tasks.Task<bool> UpdateUserAsync(WcfService.User user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserByID", ReplyAction="http://tempuri.org/IService1/GetUserByIDResponse")]
+        WcfService.User GetUserByID(string userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserByID", ReplyAction="http://tempuri.org/IService1/GetUserByIDResponse")]
+        System.Threading.Tasks.Task<WcfService.User> GetUserByIDAsync(string userID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -209,6 +221,22 @@ namespace WcfWeb.ServiceReference1 {
         
         public System.Threading.Tasks.Task<WcfService.Book> GetBookByIDAsync(int bookID) {
             return base.Channel.GetBookByIDAsync(bookID);
+        }
+        
+        public bool UpdateUser(WcfService.User user) {
+            return base.Channel.UpdateUser(user);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateUserAsync(WcfService.User user) {
+            return base.Channel.UpdateUserAsync(user);
+        }
+        
+        public WcfService.User GetUserByID(string userID) {
+            return base.Channel.GetUserByID(userID);
+        }
+        
+        public System.Threading.Tasks.Task<WcfService.User> GetUserByIDAsync(string userID) {
+            return base.Channel.GetUserByIDAsync(userID);
         }
     }
 }
