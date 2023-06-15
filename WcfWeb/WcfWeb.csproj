@@ -85,6 +85,7 @@
     <Content Include="FindBooks.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="image\22.png" />
+    <Content Include="image\bizhi1.jpg" />
     <Content Include="KeyFind.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />

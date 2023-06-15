@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>书籍</title>
+    <title>书籍管理</title>
     <!-- 添加 Bootstrap CSS 库 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>

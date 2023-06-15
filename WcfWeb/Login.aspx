@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <style>
         body {
+            background-image: url('image/bizhi1.jpg');
+            background-size: cover;
             padding-top: 40px;
             padding-bottom: 40px;
-            background-image: url('background.jpg'); /* 增加背景图片，记得替换为你的图片URL */
-            background-size: cover; 
         }
 
         .form-signin {
@@ -18,9 +18,9 @@
             max-width: 330px;
             padding: 15px;
             margin: auto;
-            background-color: rgba(255, 255, 255, 0.7); /* 增加背景颜色并使其半透明 */
-            border-radius: 15px; /* 边缘圆角化 */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 添加阴影 */
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         .form-label-group {

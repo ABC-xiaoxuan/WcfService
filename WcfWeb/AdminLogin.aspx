@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Admin Login</title>
+    <title>管理员登录</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         body {
-            background: url('image/22.png') no-repeat center center fixed;
+            
             background-size: cover;
         }
 
