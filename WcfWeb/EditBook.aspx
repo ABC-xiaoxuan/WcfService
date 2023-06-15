@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="container mt-4">
-            <h2>Edit User</h2>
+            <h2>书籍信息更改</h2>
              <div class="form-group">
                 <label for="txtBookID">Book ID:</label>
                 <asp:Label ID="lblBookID" runat="server" CssClass="form-control"></asp:Label>

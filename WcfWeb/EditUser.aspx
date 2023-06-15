@@ -10,7 +10,11 @@
 <body>
     <form id="form1" runat="server">
         <div class="container mt-4">
-            <h2>Edit User</h2>
+            <h2>用户信息更改</h2>
+            <div class="form-group">
+                <label for="txtUserID">User ID:</label>
+                <asp:Label ID="lblUserID" runat="server" CssClass="form-control"></asp:Label>
+            </div>
             <div class="form-group">
                 <label for="txtUsername">Username:</label>
                 <input type="text" id="txtUsername" runat="server" class="form-control" />

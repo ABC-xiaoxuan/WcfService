@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
 using WcfService;
 
 namespace WcfWeb
@@ -18,6 +19,7 @@ namespace WcfWeb
                 if (Request.QueryString["UserID"] != null)
                 {
                     string userID = Request.QueryString["UserID"];
+                    lblUserID.Text = userID.ToString();
 
                     // 根据UserID执行相应的操作，如加载用户信息进行编辑等
                     // 示例：根据UserID查询数据库，获取用户信息
@@ -57,6 +59,7 @@ namespace WcfWeb
             user.Email = txtEmail.Value;
             user.Phone = txtPhone.Value;
             user.Detail = txtDetail.Value;
+            user.UserID = Session["UserID"] as string;
 
             // 调用 WCF 服务的 UpdateUser 方法进行用户信息更新
             ServiceReference1.Service1Client service = new ServiceReference1.Service1Client();

@@ -44,8 +44,8 @@ namespace WcfWeb
               {
                 
                 string userID = e.CommandArgument.ToString();
+                Session["UserID"] = userID;
 
-                
                 Response.Redirect($"EditUser.aspx?UserID={userID}");
             }
 
