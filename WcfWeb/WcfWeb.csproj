@@ -78,9 +78,11 @@
     </None>
     <Content Include="AdminLogin.aspx" />
     <Content Include="AdminHomePage.aspx" />
+    <Content Include="BookMange.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="FindBooks.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="KeyFind.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="SellBooks.aspx" />
@@ -111,6 +113,13 @@
     <Compile Include="AdminHomePage.aspx.designer.cs">
       <DependentUpon>AdminHomePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BookMange.aspx.cs">
+      <DependentUpon>BookMange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookMange.aspx.designer.cs">
+      <DependentUpon>BookMange.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -136,6 +145,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KeyFind.aspx.cs">
+      <DependentUpon>KeyFind.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KeyFind.aspx.designer.cs">
+      <DependentUpon>KeyFind.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

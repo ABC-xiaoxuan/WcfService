@@ -12,11 +12,11 @@
         <h2 class="mb-5 text-center">欢迎来到我们的书店</h2>
         <div class="d-flex justify-content-around flex-wrap">
             <asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click" CssClass="btn btn-primary btn-lg mb-3" />
+            <asp:Button ID="btnAdminLogin" runat="server" Text="管理员登录" OnClick="btnAdminLogin_Click" CssClass="btn btn-primary btn-lg mb-3" />
             <asp:Button ID="btnRegister" runat="server" Text="注册" OnClick="btnRegister_Click" CssClass="btn btn-primary btn-lg mb-3" />
             <asp:Button ID="btnSearchBooks" runat="server" Text="查询书籍" OnClick="btnSearchBooks_Click" CssClass="btn btn-primary btn-lg mb-3" />
             <asp:Button ID="btnViewCart" runat="server" Text="购物车" OnClick="btnViewCart_Click" CssClass="btn btn-primary btn-lg mb-3" />
-            <asp:Button ID="btnManageUser" runat="server" Text="用户管理" OnClick="btnManageUser_Click" CssClass="btn btn-primary btn-lg mb-3" />
-            <asp:Button ID="btnSellBook" runat="server" Text="上传书籍" OnClick="btnSellBook_Click" CssClass="btn btn-primary btn-lg mb-3" />
+            
         </div>
     </form>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

@@ -63,16 +63,7 @@ namespace WcfWeb
                 gvBooks.DataBind();
             }
 
-            /*ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();*//*
-
-            // 调用 GetAllBooks 方法
-            *//* List<Book> books = client.GetAllBooks().ToList();*//*
-            WcfService.Book[] books = client.GetAllBooks();
-            List<WcfService.Book> bookslist = books.ToList();*//*
-
-
-            gvBooks.DataSource = books;
-            gvBooks.DataBind();*/
+            
         }
 
         

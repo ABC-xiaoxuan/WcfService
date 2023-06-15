@@ -56,6 +56,12 @@ namespace WcfWeb.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AdminLogin", ReplyAction="http://tempuri.org/IService1/AdminLoginResponse")]
         System.Threading.Tasks.Task<bool> AdminLoginAsync(string adminName, string adminPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchBooks", ReplyAction="http://tempuri.org/IService1/SearchBooksResponse")]
+        WcfService.Book[] SearchBooks(string keyword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchBooks", ReplyAction="http://tempuri.org/IService1/SearchBooksResponse")]
+        System.Threading.Tasks.Task<WcfService.Book[]> SearchBooksAsync(string keyword);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -139,6 +145,14 @@ namespace WcfWeb.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> AdminLoginAsync(string adminName, string adminPassword) {
             return base.Channel.AdminLoginAsync(adminName, adminPassword);
+        }
+        
+        public WcfService.Book[] SearchBooks(string keyword) {
+            return base.Channel.SearchBooks(keyword);
+        }
+        
+        public System.Threading.Tasks.Task<WcfService.Book[]> SearchBooksAsync(string keyword) {
+            return base.Channel.SearchBooksAsync(keyword);
         }
     }
 }

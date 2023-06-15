@@ -226,5 +226,42 @@ namespace WcfService
                 cmd.ExecuteNonQuery();
             }
         }
+
+        //关键字查询书籍
+        public List<Book> SearchBooks(string keyword)
+        {
+
+            List<Book> books = new List<Book>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM dbo.Books WHERE Title LIKE '%' + @Keyword + '%' OR Author LIKE '%' + @Keyword + '%'";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Keyword", keyword);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Book book = new Book
+                            {
+                                BookId = Convert.ToInt32(reader["BookId"]),
+                                Title = reader["Title"].ToString(),
+                                Author = reader["Author"].ToString(),
+                                Price = Convert.ToDecimal(reader["Price"])
+                            };
+
+                            books.Add(book);
+                        }
+                    }
+                }
+            }
+
+            return books;
+        }
     }
-}
+    }
+

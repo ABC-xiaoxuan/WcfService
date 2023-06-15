@@ -32,6 +32,9 @@ namespace WcfService
         [OperationContract]
         bool AdminLogin(string adminName, string adminPassword);
 
+        [OperationContract]
+        List<Book> SearchBooks(string keyword);
+
 
 
         // TODO: 在此添加您的服务操作
