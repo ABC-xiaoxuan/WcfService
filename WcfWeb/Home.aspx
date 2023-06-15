@@ -21,6 +21,7 @@
     </style>
 </head>
 <body>
+    <form id="form1" runat="server">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Our Bookstore</a>
         <div class="collapse navbar-collapse">
@@ -44,7 +45,8 @@
             <asp:Button ID="btnViewCart" runat="server" Text="购物车" OnClick="btnViewCart_Click" CssClass="btn btn-primary btn-lg mb-3 mx-2" />
         </div>
     </div>
-
+</form>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>
