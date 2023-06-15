@@ -16,7 +16,7 @@ namespace WcfWeb
 
         protected void btnSearchBooks_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FindBooks.aspx");
+            Response.Redirect("KeyFind.aspx");
         }
 
         protected void btnViewCart_Click(object sender, EventArgs e)
@@ -24,15 +24,7 @@ namespace WcfWeb
             Response.Redirect("Cart.aspx");
         }
 
-      /*  protected void btnManageUser_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("UserManage.aspx");
-        }*/
-
-        /*protected void btnSellBook_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("SellBooks.aspx");
-        }*/
+      
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {

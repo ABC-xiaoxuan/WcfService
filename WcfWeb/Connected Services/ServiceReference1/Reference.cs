@@ -40,10 +40,10 @@ namespace WcfWeb.ServiceReference1 {
         System.Threading.Tasks.Task AddToCartAsync(int userId, WcfService.CartItem item);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddBookToCart", ReplyAction="http://tempuri.org/IService1/AddBookToCartResponse")]
-        void AddBookToCart(int userId, int bookId);
+        void AddBookToCart(int userId, int BookID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddBookToCart", ReplyAction="http://tempuri.org/IService1/AddBookToCartResponse")]
-        System.Threading.Tasks.Task AddBookToCartAsync(int userId, int bookId);
+        System.Threading.Tasks.Task AddBookToCartAsync(int userId, int BookID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ChangePassword", ReplyAction="http://tempuri.org/IService1/ChangePasswordResponse")]
         bool ChangePassword(string username, string oldPassword, string newPassword);
@@ -82,10 +82,10 @@ namespace WcfWeb.ServiceReference1 {
         System.Threading.Tasks.Task<bool> DeleteUserAsync(int userID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBookByID", ReplyAction="http://tempuri.org/IService1/GetBookByIDResponse")]
-        WcfService.Book GetBookByID(int bookID);
+        WcfService.Book GetBookByID(int BookID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBookByID", ReplyAction="http://tempuri.org/IService1/GetBookByIDResponse")]
-        System.Threading.Tasks.Task<WcfService.Book> GetBookByIDAsync(int bookID);
+        System.Threading.Tasks.Task<WcfService.Book> GetBookByIDAsync(int BookID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUser", ReplyAction="http://tempuri.org/IService1/UpdateUserResponse")]
         bool UpdateUser(WcfService.User user);
@@ -98,6 +98,18 @@ namespace WcfWeb.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserByID", ReplyAction="http://tempuri.org/IService1/GetUserByIDResponse")]
         System.Threading.Tasks.Task<WcfService.User> GetUserByIDAsync(string userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteBook", ReplyAction="http://tempuri.org/IService1/DeleteBookResponse")]
+        bool DeleteBook(int BookID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteBook", ReplyAction="http://tempuri.org/IService1/DeleteBookResponse")]
+        System.Threading.Tasks.Task<bool> DeleteBookAsync(int BookID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateBook", ReplyAction="http://tempuri.org/IService1/UpdateBookResponse")]
+        bool UpdateBook(WcfService.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateBook", ReplyAction="http://tempuri.org/IService1/UpdateBookResponse")]
+        System.Threading.Tasks.Task<bool> UpdateBookAsync(WcfService.Book book);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -159,12 +171,12 @@ namespace WcfWeb.ServiceReference1 {
             return base.Channel.AddToCartAsync(userId, item);
         }
         
-        public void AddBookToCart(int userId, int bookId) {
-            base.Channel.AddBookToCart(userId, bookId);
+        public void AddBookToCart(int userId, int BookID) {
+            base.Channel.AddBookToCart(userId, BookID);
         }
         
-        public System.Threading.Tasks.Task AddBookToCartAsync(int userId, int bookId) {
-            return base.Channel.AddBookToCartAsync(userId, bookId);
+        public System.Threading.Tasks.Task AddBookToCartAsync(int userId, int BookID) {
+            return base.Channel.AddBookToCartAsync(userId, BookID);
         }
         
         public bool ChangePassword(string username, string oldPassword, string newPassword) {
@@ -215,12 +227,12 @@ namespace WcfWeb.ServiceReference1 {
             return base.Channel.DeleteUserAsync(userID);
         }
         
-        public WcfService.Book GetBookByID(int bookID) {
-            return base.Channel.GetBookByID(bookID);
+        public WcfService.Book GetBookByID(int BookID) {
+            return base.Channel.GetBookByID(BookID);
         }
         
-        public System.Threading.Tasks.Task<WcfService.Book> GetBookByIDAsync(int bookID) {
-            return base.Channel.GetBookByIDAsync(bookID);
+        public System.Threading.Tasks.Task<WcfService.Book> GetBookByIDAsync(int BookID) {
+            return base.Channel.GetBookByIDAsync(BookID);
         }
         
         public bool UpdateUser(WcfService.User user) {
@@ -237,6 +249,22 @@ namespace WcfWeb.ServiceReference1 {
         
         public System.Threading.Tasks.Task<WcfService.User> GetUserByIDAsync(string userID) {
             return base.Channel.GetUserByIDAsync(userID);
+        }
+        
+        public bool DeleteBook(int BookID) {
+            return base.Channel.DeleteBook(BookID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteBookAsync(int BookID) {
+            return base.Channel.DeleteBookAsync(BookID);
+        }
+        
+        public bool UpdateBook(WcfService.Book book) {
+            return base.Channel.UpdateBook(book);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateBookAsync(WcfService.Book book) {
+            return base.Channel.UpdateBookAsync(book);
         }
     }
 }

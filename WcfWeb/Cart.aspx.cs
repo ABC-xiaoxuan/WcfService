@@ -20,12 +20,12 @@ namespace WcfWeb
             for (int i = 0; i < books.Length - 1; i++)
             {
                 Book b = new Book();
-                b.BookId = int.Parse(books[i]);
+                b.BookID = int.Parse(books[i]);
                 CartBooks.Add(b);
             }
             foreach(var b in CartBooks)
             {
-                var bookID = b.BookId;
+                var bookID = b.BookID;
                 ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
                 var book = client.GetBookByID(bookID);
                 b.Author = book.Author;
@@ -63,9 +63,6 @@ namespace WcfWeb
 
             lblTotalPrice.Text = "Total Price: " + total.ToString();
         }
-        protected void btnCheckout_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

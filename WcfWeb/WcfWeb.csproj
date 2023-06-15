@@ -80,9 +80,11 @@
     <Content Include="AdminHomePage.aspx" />
     <Content Include="BooksMange.aspx" />
     <Content Include="Cart.aspx" />
+    <Content Include="EditBook.aspx" />
     <Content Include="EditUser.aspx" />
     <Content Include="FindBooks.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="image\22.png" />
     <Content Include="KeyFind.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
@@ -133,6 +135,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="EditBook.aspx.cs">
+      <DependentUpon>EditBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditBook.aspx.designer.cs">
+      <DependentUpon>EditBook.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditUser.aspx.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
@@ -223,6 +232,7 @@
       <Name>WcfService</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

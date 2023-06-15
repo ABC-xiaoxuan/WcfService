@@ -60,7 +60,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="userId" type="xs:int" />
-        <xs:element minOccurs="0" name="bookId" type="xs:int" />
+        <xs:element minOccurs="0" name="BookID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -157,7 +157,7 @@
   <xs:element name="GetBookByID">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="bookID" type="xs:int" />
+        <xs:element minOccurs="0" name="BookID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -193,6 +193,34 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="GetUserByIDResult" nillable="true" type="q9:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BookID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBookResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteBookResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="book" nillable="true" type="q10:Book" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBookResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateBookResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

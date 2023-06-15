@@ -22,7 +22,7 @@ namespace WcfService
         [OperationContract]
         void AddToCart(int userId, CartItem item);
         [OperationContract]
-        void AddBookToCart(int userId, int bookId);
+        void AddBookToCart(int userId, int BookID);
 
         //修改密码
         [OperationContract]
@@ -43,13 +43,20 @@ namespace WcfService
 
         [OperationContract]
         
-        Book GetBookByID(int bookID);
+        Book GetBookByID(int BookID);
 
         [OperationContract]
         bool UpdateUser(User user);
 
         [OperationContract]
         User GetUserByID(string userID);
+        [OperationContract]
+        bool DeleteBook(int BookID);
+        [OperationContract]
+        bool UpdateBook(Book book);
+
+
+
 
 
 
@@ -79,7 +86,7 @@ namespace WcfService
     public class Book
     {
         [DataMember]
-        public int BookId { get; set; }
+        public int BookID { get; set; }
 
         [DataMember]
         public string Title { get; set; }
@@ -94,7 +101,7 @@ namespace WcfService
     public class CartItem
     {
         [DataMember]
-        public int BookId { get; set; }
+        public int BookID { get; set; }
 
         [DataMember]
         public int Quantity { get; set; }

@@ -25,7 +25,7 @@
         </asp:GridView>
         <br />
         <asp:Label ID="lblTotalPrice" runat="server" Text="Total Price: " />
-        <asp:Button ID="btnCheckout" Text="结算" runat="server" OnClick="btnCheckout_Click" />
+        <asp:Button ID="btnCheckout" Text="结算" runat="server"  />
     </div>
     </form>
 </body>

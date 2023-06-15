@@ -20,7 +20,7 @@
   <xs:complexType name="Book">
     <xs:sequence>
       <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="BookId" type="xs:int" />
+      <xs:element minOccurs="0" name="BookID" type="xs:int" />
       <xs:element minOccurs="0" name="Price" type="xs:decimal" />
       <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -28,7 +28,7 @@
   <xs:element name="Book" nillable="true" type="tns:Book" />
   <xs:complexType name="CartItem">
     <xs:sequence>
-      <xs:element minOccurs="0" name="BookId" type="xs:int" />
+      <xs:element minOccurs="0" name="BookID" type="xs:int" />
       <xs:element minOccurs="0" name="Quantity" type="xs:int" />
     </xs:sequence>
   </xs:complexType>

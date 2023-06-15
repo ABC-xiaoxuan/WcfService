@@ -144,10 +144,10 @@ namespace WcfService
                 {
                     var book = new Book
                     {
-                        BookId = (int)rdr["BookId"],
+                        BookID = (int)rdr["BookId"],
                         Title = rdr["Title"].ToString(),
                         Author = rdr["Author"].ToString(),
-                        Price = (decimal)rdr["Price"]
+                        Price = Convert.ToDecimal(rdr["Price"])
                     };
                     books.Add(book);
                 }
@@ -155,44 +155,7 @@ namespace WcfService
 
             return books;
         }
-        //添加购物车
-        /*public bool AddBookToCart(int bookId, string userId)
-        {
-            try
-            {
-                using (var db = new BookStoreDbContext())
-                {
-                    // 获取要添加的书籍
-                    var book = db.Books.SingleOrDefault(b => b.BookId == bookId);
-                    if (book == null)
-                    {
-                        return false; // 书籍不存在
-                    }
-
-                    // 获取用户的购物车
-                    var cart = db.Carts.SingleOrDefault(c => c.UserId == userId);
-                    if (cart == null)
-                    {
-                        // 如果购物车不存在，就创建一个新的购物车
-                        cart = new Cart { UserId = userId };
-                        db.Carts.Add(cart);
-                    }
-
-                    // 将书籍添加到购物车
-                    cart.Books.Add(book);
-
-                    // 保存更改
-                    db.SaveChanges();
-
-                    return true;
-                }
-            }
-            catch (Exception)
-            {
-                // 如果在处理过程中出现异常，返回false
-                return false;
-            }
-        }*/
+        
 
         //添加购物车
         public void AddToCart(int userId, CartItem item)
@@ -201,11 +164,11 @@ namespace WcfService
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand(
-                    "INSERT INTO dbo.Cart (UserId, BookId, Quantity) VALUES (@UserId, @BookId, @Price) " +
+                    "INSERT INTO dbo.Cart (UserId, BookID, Quantity) VALUES (@UserId, @BookID, @Price) " +
                     "ON DUPLICATE KEY UPDATE Quantity = Quantity + @Quantity", con);
 
                 cmd.Parameters.AddWithValue("@UserId", userId);
-                cmd.Parameters.AddWithValue("@BookId", item.BookId);
+                cmd.Parameters.AddWithValue("@BookId", item.BookID);
                 cmd.Parameters.AddWithValue("@Quantity", item.Quantity);
 
                 con.Open();
@@ -248,7 +211,7 @@ namespace WcfService
                         {
                             Book book = new Book
                             {
-                                BookId = Convert.ToInt32(reader["BookId"]),
+                                BookID = Convert.ToInt32(reader["BookId"]),
                                 Title = reader["Title"].ToString(),
                                 Author = reader["Author"].ToString(),
                                 Price = Convert.ToDecimal(reader["Price"])
@@ -360,7 +323,7 @@ namespace WcfService
             }
         }
         //通过BookID查询书籍
-        public Book GetBookByID(int bookID)
+        public Book GetBookByID(int BookID)
         {
             string query = "SELECT BookID, Title, Author, Price FROM dbo.Books WHERE BookID = @BookID";
 
@@ -368,7 +331,7 @@ namespace WcfService
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@BookID", bookID);
+                    command.Parameters.AddWithValue("@BookID", BookID);
                     connection.Open();
 
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -377,7 +340,7 @@ namespace WcfService
                         {
                             Book book = new Book
                             {
-                                BookId = reader.GetInt32(0),
+                                BookID = reader.GetInt32(0),
                                 Title = reader.GetString(1),
                                 Author = reader.GetString(2),
                                 Price = int.Parse(reader.GetString(3))
@@ -399,7 +362,7 @@ namespace WcfService
                 try
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand("UPDATE [User] SET Username = @Username, Password = @Password, Email = @Email, Phone = @Phone, Detail = @Detail WHERE UserID = @UserID", connection);
+                    SqlCommand command = new SqlCommand("UPDATE dbo.Users  SET Username = @Username, Password = @Password, Email = @Email, Phone = @Phone, Detail = @Detail WHERE UserID = @UserID", connection);
                     command.Parameters.AddWithValue("@UserID", user.UserID);
                     command.Parameters.AddWithValue("@Username", user.Username);
                     command.Parameters.AddWithValue("@Password", user.Password);
@@ -448,26 +411,86 @@ namespace WcfService
                 return null; // 用户不存在或查询失败时返回null
             }
         }
+        //通过BookID删除书籍
+        public bool DeleteBook(int bookID)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
+                    string query = "DELETE FROM dbo.Books WHERE BookID = @BookID";
 
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@BookID", bookID);
 
+                    int rowsAffected = command.ExecuteNonQuery();
 
+                    return rowsAffected > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                // 处理异常，例如记录日志或返回错误信息
+                return false;
+            }
+        }
+        public bool UpdateBook(Book book)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
+                    string query = "UPDATE dbo.Books SET Title = @Title, Author = @Author, Price = @Price WHERE BookID = @BookID";
 
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Title", book.Title);
+                        command.Parameters.AddWithValue("@Author", book.Author);
+                        command.Parameters.AddWithValue("@Price", book.Price);
+                        command.Parameters.AddWithValue("@BookID", book.BookID);
 
+                        int rowsAffected = command.ExecuteNonQuery();
 
-
-
-
-
-
-
-
-
-
-
-
+                        return rowsAffected > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // 处理异常情况
+                // 可以记录日志或进行其他错误处理
+                return false;
+            }
+        }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
-    
+
+
 

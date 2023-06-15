@@ -46,6 +46,9 @@ namespace WcfWeb
             gvBooks.DataBind();
         }
 
-        
+        protected void btnCart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Cart.aspx");
+        }
     }
 }
