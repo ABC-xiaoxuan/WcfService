@@ -13,7 +13,7 @@
             <div>
                 <asp:TextBox ID="txtKeyword" runat="server" CssClass="form-control mb-2" placeholder="输入关键字"></asp:TextBox>
                 <asp:Button ID="btnSearch" Text="搜索" runat="server" OnClick="btnSearch_Click" CssClass="btn btn-primary mb-3" />
-                <asp:GridView ID="gvBooks" runat="server" AutoGenerateColumns="False"  CssClass="table table-striped" >
+                <asp:GridView ID="gvBooks" runat="server" AutoGenerateColumns="False"  CssClass="table table-striped" OnRowCommand ="RowCommand">
                     <Columns>
                         <asp:BoundField DataField="BookId" HeaderText="Book ID" />
                         <asp:BoundField DataField="Title" HeaderText="Title" />

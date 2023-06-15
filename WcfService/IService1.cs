@@ -35,6 +35,18 @@ namespace WcfService
         [OperationContract]
         List<Book> SearchBooks(string keyword);
 
+        [OperationContract]
+        List<User> GetAllUsers();
+
+        [OperationContract]
+        User[] SearchUsers(string keyword);
+        [OperationContract]
+        bool DeleteUser(int userID);
+
+        [OperationContract]
+        
+        Book GetBookByID(int bookID);
+
 
 
         // TODO: 在此添加您的服务操作
@@ -44,10 +56,19 @@ namespace WcfService
     {
         [DataMember]
         public string UserID { get; set; }
+        [DataMember]
         public string Username { get; set; }
 
         [DataMember]
         public string Password { get; set; }
+
+        [DataMember]
+        public string Email { get; set; }
+        [DataMember]
+        public string Phone { get; set; }
+        [DataMember]
+
+        public string Detail { get; set; }
     }
     
     [DataContract]

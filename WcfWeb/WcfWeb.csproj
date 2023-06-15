@@ -78,15 +78,16 @@
     </None>
     <Content Include="AdminLogin.aspx" />
     <Content Include="AdminHomePage.aspx" />
-    <Content Include="BookMange.aspx" />
+    <Content Include="BooksMange.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="FindBooks.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="KeyFind.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="SellBooks.aspx" />
+    <Content Include="UploadBooks.aspx" />
     <Content Include="UserManage.aspx" />
+    <Content Include="UserManage1.aspx" />
     <Content Include="Web.config" />
     <None Include="Connected Services\ServiceReference1\Service1.wsdl" />
     <None Include="Connected Services\ServiceReference1\Service11.xsd">
@@ -113,12 +114,12 @@
     <Compile Include="AdminHomePage.aspx.designer.cs">
       <DependentUpon>AdminHomePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BookMange.aspx.cs">
-      <DependentUpon>BookMange.aspx</DependentUpon>
+    <Compile Include="BooksMange.aspx.cs">
+      <DependentUpon>BooksMange.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BookMange.aspx.designer.cs">
-      <DependentUpon>BookMange.aspx</DependentUpon>
+    <Compile Include="BooksMange.aspx.designer.cs">
+      <DependentUpon>BooksMange.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
@@ -168,12 +169,12 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SellBooks.aspx.cs">
-      <DependentUpon>SellBooks.aspx</DependentUpon>
+    <Compile Include="UploadBooks.aspx.cs">
+      <DependentUpon>UploadBooks.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SellBooks.aspx.designer.cs">
-      <DependentUpon>SellBooks.aspx</DependentUpon>
+    <Compile Include="UploadBooks.aspx.designer.cs">
+      <DependentUpon>UploadBooks.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserManage.aspx.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
@@ -181,6 +182,13 @@
     </Compile>
     <Compile Include="UserManage.aspx.designer.cs">
       <DependentUpon>UserManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage1.aspx.cs">
+      <DependentUpon>UserManage1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage1.aspx.designer.cs">
+      <DependentUpon>UserManage1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

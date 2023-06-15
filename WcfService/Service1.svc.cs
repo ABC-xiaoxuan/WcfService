@@ -262,6 +262,141 @@ namespace WcfService
 
             return books;
         }
+
+
+
+        //查询所有用户
+        public List<User> GetAllUsers()
+        {
+            List<User> users = new List<User>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM Users";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            User user = new User
+                            {
+                                UserID = reader.GetInt32(reader.GetOrdinal("UserID")).ToString(),
+                                Username = reader["Username"].ToString(),
+                                Password = reader["Password"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                Phone = reader["Phone"].ToString(),
+                                Detail = reader["Detail"].ToString()
+                            };
+
+                            users.Add(user);
+                        }
+                    }
+                }
+            }
+
+            return users;
+        }
+
+
+
+        //关键字查询用户
+        public User[] SearchUsers(string keyword)
+        {
+            List<User> users = new List<User>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM dbo.Users WHERE Username LIKE '%' + @Keyword + '%' OR Email LIKE '%' + @Keyword + '%' OR Phone LIKE '%' + @Keyword + '%'";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Keyword", keyword);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            User user = new User
+                            {
+                                UserID = reader["UserID"].ToString(),
+                                Username = reader["Username"].ToString(),
+                                Password = reader["Password"].ToString(),
+                                Email = reader["Email"].ToString(),
+                                Phone = reader["Phone"].ToString(),
+                                Detail = reader["Detail"].ToString()
+                            };
+
+                            users.Add(user);
+                        }
+                    }
+                }
+            }
+
+            return users.ToArray();
+        }
+
+
+        //删除用户By UserID
+        public bool DeleteUser(int userID)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM dbo.Users WHERE UserID = @UserID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserID", userID);
+
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    connection.Close();
+
+                    return rowsAffected > 0;
+                }
+            }
+        }
+        //通过BookID查询书籍
+        public Book GetBookByID(int bookID)
+        {
+            string query = "SELECT BookID, Title, Author, Price FROM dbo.Books WHERE BookID = @BookID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@BookID", bookID);
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Book book = new Book
+                            {
+                                BookId = reader.GetInt32(0),
+                                Title = reader.GetString(1),
+                                Author = reader.GetString(2),
+                                Price = reader.GetDecimal(3)
+                            };
+
+                            return book;
+                        }
+                    }
+                }
+            }
+
+            return null; // Book not found
+        }
     }
-    }
+
+
+
+
+
+}
+    
 

@@ -10,21 +10,35 @@ namespace WcfWeb
 {
     public partial class Cart : System.Web.UI.Page
     {
-        private List<Book> CartBooks
-        {
-            get
-            {
-                if (Session["CartBooks"] == null)
-                {
-                    Session["CartBooks"] = new List<Book>();
-                }
-
-                return (List<Book>)Session["CartBooks"];
-            }
-            set { Session["CartBooks"] = value; }
-        }
+        private List<Book> CartBooks = new List<Book>();
         protected void Page_Load(object sender, EventArgs e)
         {
+            var bookList = Session["Books"] as string;
+            if (bookList == null)
+                return;
+            var books = bookList.Split('|');
+            for (int i = 0; i < books.Length - 1; i++)
+            {
+                Book b = new Book();
+                b.BookId = int.Parse(books[i]);
+                CartBooks.Add(b);
+            }
+            foreach(var b in CartBooks)
+            {
+                var bookID = b.BookId;
+
+                
+            }
+            foreach (var book in CartBooks)
+            {
+                // 在这里可以使用查询到的书籍信息进行后续操作
+                
+                Console.WriteLine("Title: " + book.Title);
+                Console.WriteLine("Author: " + book.Author);
+                Console.WriteLine("Price: " + book.Price);
+                
+            }
+
             if (!IsPostBack)
             {
                 BindData();

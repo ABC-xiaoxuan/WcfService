@@ -11,7 +11,7 @@ namespace WcfWeb
 {
 
 
-    public partial class BookMange
+    public partial class BooksMange
     {
 
         /// <summary>

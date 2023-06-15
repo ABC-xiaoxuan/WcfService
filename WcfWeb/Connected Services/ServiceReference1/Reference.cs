@@ -62,6 +62,30 @@ namespace WcfWeb.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchBooks", ReplyAction="http://tempuri.org/IService1/SearchBooksResponse")]
         System.Threading.Tasks.Task<WcfService.Book[]> SearchBooksAsync(string keyword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllUsers", ReplyAction="http://tempuri.org/IService1/GetAllUsersResponse")]
+        WcfService.User[] GetAllUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllUsers", ReplyAction="http://tempuri.org/IService1/GetAllUsersResponse")]
+        System.Threading.Tasks.Task<WcfService.User[]> GetAllUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchUsers", ReplyAction="http://tempuri.org/IService1/SearchUsersResponse")]
+        WcfService.User[] SearchUsers(string keyword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/SearchUsers", ReplyAction="http://tempuri.org/IService1/SearchUsersResponse")]
+        System.Threading.Tasks.Task<WcfService.User[]> SearchUsersAsync(string keyword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUser", ReplyAction="http://tempuri.org/IService1/DeleteUserResponse")]
+        bool DeleteUser(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteUser", ReplyAction="http://tempuri.org/IService1/DeleteUserResponse")]
+        System.Threading.Tasks.Task<bool> DeleteUserAsync(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBookByID", ReplyAction="http://tempuri.org/IService1/GetBookByIDResponse")]
+        WcfService.Book GetBookByID(int bookID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBookByID", ReplyAction="http://tempuri.org/IService1/GetBookByIDResponse")]
+        System.Threading.Tasks.Task<WcfService.Book> GetBookByIDAsync(int bookID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -153,6 +177,38 @@ namespace WcfWeb.ServiceReference1 {
         
         public System.Threading.Tasks.Task<WcfService.Book[]> SearchBooksAsync(string keyword) {
             return base.Channel.SearchBooksAsync(keyword);
+        }
+        
+        public WcfService.User[] GetAllUsers() {
+            return base.Channel.GetAllUsers();
+        }
+        
+        public System.Threading.Tasks.Task<WcfService.User[]> GetAllUsersAsync() {
+            return base.Channel.GetAllUsersAsync();
+        }
+        
+        public WcfService.User[] SearchUsers(string keyword) {
+            return base.Channel.SearchUsers(keyword);
+        }
+        
+        public System.Threading.Tasks.Task<WcfService.User[]> SearchUsersAsync(string keyword) {
+            return base.Channel.SearchUsersAsync(keyword);
+        }
+        
+        public bool DeleteUser(int userID) {
+            return base.Channel.DeleteUser(userID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteUserAsync(int userID) {
+            return base.Channel.DeleteUserAsync(userID);
+        }
+        
+        public WcfService.Book GetBookByID(int bookID) {
+            return base.Channel.GetBookByID(bookID);
+        }
+        
+        public System.Threading.Tasks.Task<WcfService.Book> GetBookByIDAsync(int bookID) {
+            return base.Channel.GetBookByIDAsync(bookID);
         }
     }
 }

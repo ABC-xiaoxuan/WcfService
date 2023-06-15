@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SellBooks.aspx.cs" Inherits="WcfWeb.SellBooks" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadBooks.aspx.cs" Inherits="WcfWeb.SellBooks" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

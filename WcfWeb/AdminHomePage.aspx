@@ -42,8 +42,8 @@
                     <h5 class="card-header text-center">Admin Dashboard</h5>
                     <div class="card-body">
                         <button type="button" class="btn btn-primary btn-dashboard" onclick="location.href='UserManage.aspx'">用户管理</button>
-                        <button type="button" class="btn btn-secondary btn-dashboard" onclick="location.href='BookManage.aspx'">书籍管理</button>
-                        <button type="button" class="btn btn-success btn-dashboard" onclick="location.href='SellBooks.aspx'">上传书籍</button>
+                        <button type="button" class="btn btn-secondary btn-dashboard" onclick="location.href='BooksMange.aspx'">书籍管理</button>
+                        <button type="button" class="btn btn-success btn-dashboard" onclick="location.href='UploadBooks.aspx'">上传书籍</button>
                     </div>
                 </div>
             </div>

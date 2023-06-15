@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WcfWeb
 {
-    public partial class BookMange : System.Web.UI.Page
+    public partial class BooksMange : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
