@@ -6,19 +6,34 @@
     <title>用户信息管理</title>
     <!-- 添加 Bootstrap CSS 库 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('image/bizhi1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 10px;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="container mt-4">
             <div class="row">
                 <div class="col-md-6 offset-md-3">
-    <div class="input-group mb-3">
-        <asp:TextBox ID="txtKeyword" runat="server" CssClass="form-control" placeholder="输入关键字"></asp:TextBox>
-        <div class="input-group-append">
-            <asp:Button ID="btnSearch" runat="server" Text="查询" CssClass="btn btn-primary" OnClick="btnSearch_Click" />
-        </div>
-    </div>
-</div>
+                    <div class="input-group mb-3">
+                        <asp:TextBox ID="txtKeyword" runat="server" CssClass="form-control" placeholder="输入关键字"></asp:TextBox>
+                        <div class="input-group-append">
+                            <asp:Button ID="btnSearch" runat="server" Text="查询" CssClass="btn btn-primary" OnClick="btnSearch_Click" />
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-6 offset-md-3">

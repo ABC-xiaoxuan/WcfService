@@ -33,7 +33,7 @@
             </div>
             <br />
             <div>
-                <asp:Button ID="btnCheckout" Text="结算" runat="server" CssClass="btn btn-primary" />
+                <asp:Button ID="btnCheckout" Text="结算" runat="server" CssClass="btn btn-primary" OnClick="btnCheckout_Click" />
             </div>
         </div>
     </form>

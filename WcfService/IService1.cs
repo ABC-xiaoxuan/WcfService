@@ -12,46 +12,55 @@ namespace WcfService
     [ServiceContract]
     public interface IService1
     {
+        //注册
         [OperationContract]
         bool Register(string username, string password);
-
+        //登录
         [OperationContract]
         User Login(string username, string password);
+        //查询所有书籍
         [OperationContract]
         List<Book> GetAllBooks();
+        //添加购物车
         [OperationContract]
         void AddToCart(int userId, CartItem item);
+        //添加购物车
         [OperationContract]
         void AddBookToCart(int userId, int BookID);
 
         //修改密码
         [OperationContract]
         bool ChangePassword(string username, string oldPassword, string newPassword);
+        //管理员登录
         [OperationContract]
         bool AdminLogin(string adminName, string adminPassword);
 
+        //关键字查询书籍
         [OperationContract]
         List<Book> SearchBooks(string keyword);
-
+        //查询所有用户
         [OperationContract]
         List<User> GetAllUsers();
-
+        //关键字查找用户
         [OperationContract]
         User[] SearchUsers(string keyword);
+
+        //删除用户
         [OperationContract]
         bool DeleteUser(int userID);
-
+        //通过ID查找书籍
         [OperationContract]
-        
         Book GetBookByID(int BookID);
-
+        //更新用户信息
         [OperationContract]
         bool UpdateUser(User user);
-
+        //通过id查找用户
         [OperationContract]
         User GetUserByID(string userID);
+        //删除书籍
         [OperationContract]
         bool DeleteBook(int BookID);
+        //更新书籍信息
         [OperationContract]
         bool UpdateBook(Book book);
 
@@ -106,6 +115,7 @@ namespace WcfService
         [DataMember]
         public int Quantity { get; set; }
     }
+
 
 
 }

@@ -25,7 +25,10 @@ namespace WcfWeb
 
             if (isLoggedIn)
             {
-                // 登录成功，重定向到管理员主页或其他适当的页面
+                // 登录成功，将管理员姓名保存到Session
+                Session["AdminName"] = adminName;
+
+                // 重定向到管理员主页或其他适当的页面
                 Response.Redirect("AdminHomePage.aspx");
             }
             else

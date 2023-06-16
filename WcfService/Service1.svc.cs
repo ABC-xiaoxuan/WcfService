@@ -69,7 +69,7 @@ namespace WcfService
                 }
             }
         }
-
+        //注册
         public bool Register(string username, string password)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -436,6 +436,8 @@ namespace WcfService
                 return false;
             }
         }
+
+        //更新书籍信息
         public bool UpdateBook(Book book)
         {
             try

@@ -63,6 +63,11 @@ namespace WcfWeb
 
             lblTotalPrice.Text = "Total Price: " + total.ToString();
         }
-       
+
+        protected void btnCheckout_Click(object sender, EventArgs e)
+        {
+            string script = "<script>alert('付款成功');</script>";
+            Response.Write(script);
+        }
     }
 }

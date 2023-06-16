@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Admin Dashboard</title>
+    <title>管理员页面</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         body {
@@ -39,8 +39,9 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
-                    <h5 class="card-header text-center">Admin Dashboard</h5>
+                    <h5 class="card-header text-center">管理员页面</h5>
                     <div class="card-body">
+                        <h1><asp:Label ID="lblAdminName" runat="server" Text=""></asp:Label></h1>
                         <button type="button" class="btn btn-primary btn-dashboard" onclick="location.href='UserManage.aspx'">用户管理</button>
                         <button type="button" class="btn btn-secondary btn-dashboard" onclick="location.href='BooksMange.aspx'">书籍管理</button>
                         <button type="button" class="btn btn-success btn-dashboard" onclick="location.href='UploadBooks.aspx'">上传书籍</button>

@@ -3,9 +3,24 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>关键字查询</title>
+    <title>书籍查询</title>
     <!-- 添加 Bootstrap CSS 库 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('image/bizhi1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 10px;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-4">

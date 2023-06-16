@@ -31,7 +31,7 @@ namespace WcfWeb
             {
                 int BookID = Convert.ToInt32(e.CommandArgument);
 
-                // 调用WCF服务的DeleteUser方法进行用户删除
+                // 调用WCF服务的DeleteBook方法进行用户删除
                 ServiceReference1.Service1Client service = new ServiceReference1.Service1Client();
                 bool result = service.DeleteBook(BookID);
 

@@ -5,64 +5,70 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>首页</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
-        body,
-        html {
-            height: 100%;
-            margin: 0;
-            background: url('image/bizhi1.jpg') no-repeat center center fixed;
+        body {
+            background-image: url('image/bizhi1.jpg');
             background-size: cover;
-        }
-
-        .navbar {
-            margin-bottom: 50px;
-        }
-
-        .container {
-            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
 
-        .btn-container {
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+            width: 100%;
+        }
+
+        nav h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .buttons-container {
             display: flex;
             justify-content: center;
+            margin-top: 50px;
         }
 
-        .btn {
+        .buttons-container button, .btn-round {
             margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            
+        <nav>
             <h1>欢迎来到我们的书店</h1>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click" CssClass="btn btn-primary btn-lg ms-2" />
-                    </li>
-                    <li class="nav-item">
-                        <asp:Button ID="btnAdminLogin" runat="server" Text="管理员登录" OnClick="btnAdminLogin_Click" CssClass="btn btn-primary btn-lg ms-2" />
-                    </li>
-                    <li class="nav-item">
-                        <asp:Button ID="btnRegister" runat="server" Text="注册" OnClick="btnRegister_Click" CssClass="btn btn-primary btn-lg ms-2" />
-                    </li>
-                </ul>
+            <div>
+                <h1><asp:Label ID="lblUsername" runat="server" Text=""></asp:Label></h1>
+                <asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click" CssClass="btn btn-primary btn-lg btn-round" />
+                <asp:Button ID="btnAdminLogin" runat="server" Text="管理员登录" OnClick="btnAdminLogin_Click" CssClass="btn btn-primary btn-lg btn-round" />
+                <asp:Button ID="btnRegister" runat="server" Text="注册" OnClick="btnRegister_Click" CssClass="btn btn-primary btn-lg btn-round" />
             </div>
         </nav>
 
-        <div class="container">
-            <div class="btn-container">
-                <asp:Button ID="btnSearchBooks" runat="server" Text="书籍查询" OnClick="btnSearchBooks_Click" CssClass="btn btn-primary btn-lg" />
-                <asp:Button ID="btnViewCart" runat="server" Text="购物车" OnClick="btnViewCart_Click" CssClass="btn btn-primary btn-lg" />
-            </div>
+        <div class="buttons-container">
+            <asp:Button ID="btnSearchBooks" runat="server" Text="书籍查询" OnClick="btnSearchBooks_Click" CssClass="btn btn-primary btn-lg btn-round" />
+            <asp:Button ID="btnViewCart" runat="server" Text="购物车" OnClick="btnViewCart_Click" CssClass="btn btn-primary btn-lg btn-round" />
         </div>
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
