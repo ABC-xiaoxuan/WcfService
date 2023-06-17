@@ -28,6 +28,7 @@
         .form-label-group > label {
             height: 3.125rem;
             padding: .75rem;
+            border-radius: 10px; /* Add rounded corners to textboxes */
         }
         .form-label-group.captcha-group {
             display: flex;
@@ -39,6 +40,7 @@
         }
         .btn-secondary {
             margin-top: 20px;
+            border-radius: 10px; /* Add rounded corners to buttons */
         }
     </style>
 </head>

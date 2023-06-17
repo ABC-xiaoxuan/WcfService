@@ -68,10 +68,6 @@ namespace WcfService
         CaptchaResponse GenerateCaptcha();
 
 
-
-
-
-
         // TODO: 在此添加您的服务操作
     }
     [DataContract]

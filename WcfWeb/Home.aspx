@@ -41,7 +41,7 @@
             margin-top: 50px;
         }
 
-        .buttons-container button, .btn-round {
+        .buttons-container button, .btn-round, .form-control {
             margin: 10px;
             padding: 10px 20px;
             font-size: 18px;
