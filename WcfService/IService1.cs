@@ -63,6 +63,9 @@ namespace WcfService
         //更新书籍信息
         [OperationContract]
         bool UpdateBook(Book book);
+        //验证码服务
+        [OperationContract]
+        CaptchaResponse GenerateCaptcha();
 
 
 
@@ -115,7 +118,15 @@ namespace WcfService
         [DataMember]
         public int Quantity { get; set; }
     }
+    [DataContract]
+    public class CaptchaResponse
+    {
+        [DataMember]
+        public string CaptchaText { get; set; }
 
+        [DataMember]
+        public string CaptchaImageBase64 { get; set; }
+    }
 
 
 }

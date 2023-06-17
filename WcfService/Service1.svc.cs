@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -15,7 +17,51 @@ namespace WcfService
     // 注意: 为了启动 WCF 测试客户端以测试此服务，请在解决方案资源管理器中选择 Service1.svc 或 Service1.svc.cs，然后开始调试。
     public class Service1 : IService1
     {
+        public CaptchaResponse GenerateCaptcha()
+        {
+            // Generate random string
+            string captchaText = GenerateRandomText(5);
 
+            // Create a new bitmap
+            Bitmap bmp = new Bitmap(150, 30);
+            RectangleF rectf = new RectangleF(10, 5, 0, 0);
+
+            // Draw the string onto the bitmap
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                g.Clear(Color.White);
+                using (SolidBrush brush = new SolidBrush(Color.Black))
+                {
+                    g.DrawString(captchaText, new Font("Tahoma", 20), brush, rectf);
+                }
+                using (Pen pen = new Pen(Color.Yellow))
+                {
+                    g.DrawRectangle(pen, 0, 0, bmp.Width - 1, bmp.Height - 1);
+                }
+            }
+
+            // Convert the bitmap to a base64 string
+            using (MemoryStream ms = new MemoryStream())
+            {
+                bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                byte[] byteImage = ms.ToArray();
+                string base64String = Convert.ToBase64String(byteImage);
+
+                return new CaptchaResponse { CaptchaText = captchaText, CaptchaImageBase64 = base64String };
+            }
+        }
+
+        private string GenerateRandomText(int length)
+        {
+            string possibleChars = "1234567890";
+            Random random = new Random();
+            char[] chars = new char[length];
+            for (int i = 0; i < length; i++)
+            {
+                chars[i] = possibleChars[random.Next(0, possibleChars.Length)];
+            }
+            return new string(chars);
+        }
         // 数据库连接字符串
         private string connectionString = "Data Source=(local);Initial Catalog=BookStoreDB;Integrated Security=True";
 
@@ -467,6 +513,10 @@ namespace WcfService
                 // 可以记录日志或进行其他错误处理
                 return false;
             }
+
+
+
+           
         }
     }
 

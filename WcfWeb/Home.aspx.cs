@@ -21,12 +21,12 @@ namespace WcfWeb
                     User user = (User)Session["User"];
 
                     // 在页面上显示用户姓名
-                    lblUsername.Text = "Welcome, " + user.Username;
+                    lblUsername.Text = "欢迎登录, " + user.Username;
                 }
                 else
                 {
-                    // 用户未登录，重定向到登录页面
-                    Response.Redirect("Login.aspx");
+                    /*// 用户未登录，重定向到登录页面
+                    Response.Redirect("Login.aspx");*/
                 }
             }
         }
@@ -53,9 +53,6 @@ namespace WcfWeb
             Response.Redirect("Register.aspx");
         }
 
-        protected void btnAdminLogin_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AdminLogin.aspx");
-        }
+       
     }
 }

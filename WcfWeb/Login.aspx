@@ -1,5 +1,4 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WcfWeb.Login" %>
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -12,7 +11,6 @@
             padding-top: 40px;
             padding-bottom: 40px;
         }
-
         .form-signin {
             width: 100%;
             max-width: 330px;
@@ -22,16 +20,25 @@
             border-radius: 15px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-
         .form-label-group {
             position: relative;
             margin-bottom: 1rem;
         }
-
-        .form-label-group>input,
-        .form-label-group>label {
+        .form-label-group > input,
+        .form-label-group > label {
             height: 3.125rem;
             padding: .75rem;
+        }
+        .form-label-group.captcha-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .form-label-group.captcha-group > img {
+            margin-left: 20px;
+        }
+        .btn-secondary {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -42,13 +49,16 @@
             <asp:Label runat="server" AssociatedControlID="Username">用户名</asp:Label>
             <asp:TextBox ID="Username" runat="server" CssClass="form-control" placeholder="用户名" />
         </div>
-
         <div class="form-label-group">
             <asp:Label runat="server" AssociatedControlID="Password">密码</asp:Label>
             <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="form-control" placeholder="密码" />
         </div>
-
+        <div class="form-label-group captcha-group">
+            <asp:TextBox ID="Captcha" runat="server" CssClass="form-control" placeholder="验证码"  />
+            <asp:Image ID="captchaImage" runat="server" ImageUrl="Captcha.aspx" alt="验证码" style="cursor:pointer;"/>
+        </div>
         <asp:Button runat="server" ID="LoginButton" Text="登录" CssClass="btn btn-lg btn-primary btn-block" OnClick="LoginButton_Click" />
+        <asp:Button runat="server" ID="AdminLoginButton" Text="管理员登录" CssClass="btn btn-lg btn-secondary btn-block" OnClick="AdminLoginButton_Click" />
     </form>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>

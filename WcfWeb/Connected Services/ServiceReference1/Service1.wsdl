@@ -103,6 +103,12 @@
   <wsdl:message name="IService1_UpdateBook_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateBookResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GenerateCaptcha_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateCaptcha" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GenerateCaptcha_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateCaptchaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Register" message="tns:IService1_Register_InputMessage" />
@@ -167,6 +173,10 @@
     <wsdl:operation name="UpdateBook">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateBook" message="tns:IService1_UpdateBook_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateBookResponse" message="tns:IService1_UpdateBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateCaptcha">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GenerateCaptcha" message="tns:IService1_GenerateCaptcha_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GenerateCaptchaResponse" message="tns:IService1_GenerateCaptcha_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -308,6 +318,15 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateBook">
       <soap:operation soapAction="http://tempuri.org/IService1/UpdateBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateCaptcha">
+      <soap:operation soapAction="http://tempuri.org/IService1/GenerateCaptcha" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

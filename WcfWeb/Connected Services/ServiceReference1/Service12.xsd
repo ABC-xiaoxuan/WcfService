@@ -224,4 +224,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GenerateCaptcha">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateCaptchaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfService" minOccurs="0" name="GenerateCaptchaResult" nillable="true" type="q11:CaptchaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

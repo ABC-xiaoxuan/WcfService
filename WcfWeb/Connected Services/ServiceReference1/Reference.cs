@@ -110,6 +110,12 @@ namespace WcfWeb.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateBook", ReplyAction="http://tempuri.org/IService1/UpdateBookResponse")]
         System.Threading.Tasks.Task<bool> UpdateBookAsync(WcfService.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GenerateCaptcha", ReplyAction="http://tempuri.org/IService1/GenerateCaptchaResponse")]
+        WcfService.CaptchaResponse GenerateCaptcha();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GenerateCaptcha", ReplyAction="http://tempuri.org/IService1/GenerateCaptchaResponse")]
+        System.Threading.Tasks.Task<WcfService.CaptchaResponse> GenerateCaptchaAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -265,6 +271,14 @@ namespace WcfWeb.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> UpdateBookAsync(WcfService.Book book) {
             return base.Channel.UpdateBookAsync(book);
+        }
+        
+        public WcfService.CaptchaResponse GenerateCaptcha() {
+            return base.Channel.GenerateCaptcha();
+        }
+        
+        public System.Threading.Tasks.Task<WcfService.CaptchaResponse> GenerateCaptchaAsync() {
+            return base.Channel.GenerateCaptchaAsync();
         }
     }
 }

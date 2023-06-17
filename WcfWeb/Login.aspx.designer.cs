@@ -33,6 +33,24 @@ namespace WcfWeb
         protected global::System.Web.UI.WebControls.TextBox Password;
 
         /// <summary>
+        /// Captcha 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Captcha;
+
+        /// <summary>
+        /// captchaImage 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image captchaImage;
+
+        /// <summary>
         /// LoginButton 控件。
         /// </summary>
         /// <remarks>
@@ -40,5 +58,14 @@ namespace WcfWeb
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button LoginButton;
+
+        /// <summary>
+        /// AdminLoginButton 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AdminLoginButton;
     }
 }

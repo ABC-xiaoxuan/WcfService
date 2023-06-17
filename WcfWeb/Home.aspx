@@ -60,7 +60,7 @@
             <div>
                 <h1><asp:Label ID="lblUsername" runat="server" Text=""></asp:Label></h1>
                 <asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click" CssClass="btn btn-primary btn-lg btn-round" />
-                <asp:Button ID="btnAdminLogin" runat="server" Text="管理员登录" OnClick="btnAdminLogin_Click" CssClass="btn btn-primary btn-lg btn-round" />
+                
                 <asp:Button ID="btnRegister" runat="server" Text="注册" OnClick="btnRegister_Click" CssClass="btn btn-primary btn-lg btn-round" />
             </div>
         </nav>

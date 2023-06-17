@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         body {
-            background-image: url('https://www.pexels.com/zh-cn/photo/1261728/');
+            background-image: url('image/bizhi1.jpg');
+
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

@@ -39,4 +39,11 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="CaptchaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CaptchaImageBase64" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CaptchaText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CaptchaResponse" nillable="true" type="tns:CaptchaResponse" />
 </xs:schema>
